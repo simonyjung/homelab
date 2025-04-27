@@ -22,7 +22,7 @@ Use cheap, used mini PCs as cluster nodes, running Debian 13 as the operating sy
 
 **Hardware Details:**
 - Three HP ProDesk 600 G4 Mini Desktop PCs
-  - CPU: Intel Core i5-8500T
+  - CPU: Intel Core i5-8500T (6-core, 6-thread)
   - RAM: 8GB DDR4 (Upgradeable to 64GB)
   - Storage: 128GB NVMe SSD (Supports additional NVMe drive for expanded storage)
 - Units were purchased used via eBay.
@@ -31,6 +31,9 @@ Use cheap, used mini PCs as cluster nodes, running Debian 13 as the operating sy
 **Potential Upgrade Paths:**
 - Increasing RAM up to 64GB per node.
 - Adding an additional NVMe drive per node to enable persistent storage solutions such as Longhorn.
+
+**Likely Upgrade Paths:**
+- Increase RAM to 16GB per worker node. The OS + Kubernetes services take around 2GB of memory, which leaves 6GB per worker node for workloads. 8GB DDR4 SODIMM can be purchased for ~$17 each on amazon and would provide 14GB per worker for workloads. 
 
 **Alternatives Considered:**
 - **New Hardware**: More reliable, but cost-prohibitive for the intended scale.

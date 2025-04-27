@@ -11,6 +11,8 @@ My work at Dendi uses AWS ECS for container orchestration, but that is not avail
 
 ### Nodes
 
+See [ADR-0003](/adr/0003-node-hardware-os.md)
+
 The nodes are 3 HP mini pcs purchased off ebay. They are small, have low electricity usage, and are cheap used.
 
 HP ProDesk 600 G4 Mini Desktop PC i5-8500T/8GB/128GB NVME

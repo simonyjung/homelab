@@ -21,11 +21,11 @@ Use cheap, used mini PCs as cluster nodes, running Debian 13 as the operating sy
 - **Timing**: Debian 13 entered soft freeze as of April 15, 2025, and is expected to be fully released before the completion of the KC01 cluster project.
 
 **Hardware Details:**
-- Three HP ProDesk 600 G4 Mini Desktop PCs
+- Three HP ProDesk 600 G4 Mini Desktop PCs and a 1 Master Node, 2 Worker Node configuration.
   - CPU: Intel Core i5-8500T (6-core, 6-thread)
   - RAM: 8GB DDR4 (Upgradeable to 64GB)
   - Storage: 128GB NVMe SSD (Supports additional NVMe drive for expanded storage)
-- Units were purchased used via eBay.
+- Units were purchased used via eBay for under $300 total.
 - Compact design, low electricity usage, and affordable cost were key selection factors.
 
 **Potential Upgrade Paths:**
@@ -33,13 +33,14 @@ Use cheap, used mini PCs as cluster nodes, running Debian 13 as the operating sy
 - Adding an additional NVMe drive per node to enable persistent storage solutions such as Longhorn.
 
 **Likely Upgrade Paths:**
-- Increase RAM to 16GB per worker node. The OS + Kubernetes services take around 2GB of memory, which leaves 6GB per worker node for workloads. 8GB DDR4 SODIMM can be purchased for ~$17 each on amazon and would provide 14GB per worker for workloads. 
+- Increase RAM to 16GB per worker node. The OS + Kubernetes services take around 2GB of memory, which leaves 6GB per worker node for workloads. 8GB DDR4 SODIMM can be purchased for ~$17 each on amazon and would provide 14GB total per worker node for workloads. 
 
 **Alternatives Considered:**
 - **New Hardware**: More reliable, but cost-prohibitive for the intended scale.
 - **Other Distributions (e.g., Ubuntu, Fedora)**: Faster-moving distributions considered, but Debian's conservative approach and predictable support timelines better matched homelab stability goals.
+- **3 Control Plane Configuration**: A 3 Control Plane, 3 worker node configuration was considered to provide higher availabilty of the control plane. Ultimately, a simplier 1 control plane, 2 worker node configuration was selected. The extra complexity of maintaining a 3 control plane nodes is not commonly applicable in a production cloud kubernetes scenario. Amazon EKS and Microsoft AKS already manage the control plane layer. The consequences of a control plane failure in a homelab scenario were considered acceptable as existing services are not affected.
 
 ## Consequences
-
 - **Positive**: Lower upfront costs, acceptable reliability with Kubernetes redundancy, efficient power usage.
 - **Trade-off**: Potential for higher node failure rates over time.
+- **Control Plane Failure**: A single failure of the Master node results in loss of pod scheduling. Existing services and workflows are not affected.

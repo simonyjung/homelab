@@ -29,7 +29,7 @@ Use inexpensive, used mini PCs as cluster nodes, running Debian 13 as the operat
 | **Model**       | Dell Optiplex 3060 Mini Desktop PC    |                              |
 | **CPU**         | Intel Core i5-8500T                   | 6-core, 6-thread             |   
 | **RAM**         | 24GB DDR4                             | From existing homelab        |
-| **Storage**     | 128GB NVMe SSD                        | Expandable with 2nd M.2 slot |
+| **Storage**     | 512GB NVMe SSD                        | Expandable with SATA slot    |
 | **Networking**  | 1 Gbps Ethernet                       |                              |
 | **Cost**        | Existing hardware                     |                              |
 

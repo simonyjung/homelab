@@ -11,6 +11,8 @@ Hardware selection needed to balance cost, reliability, and energy efficiency fo
 
 Use cheap, used mini PCs as cluster nodes, running Debian 13 as the operating system.
 
+[KC01 Cluster Diagram](./diagrams/0003_cluster_diagram.png)
+
 ## Rationale
 
 - **Cost Efficiency**: Used mini PCs offer substantial savings compared to new hardware.

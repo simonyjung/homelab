@@ -1,11 +1,9 @@
-# 🏡 homelab
+# 🏡 KC01 - homelab
 
 ## 👋 Introduction
-Welcome to Simon's homelab documentation and configuration.
+Welcome to publicaly available documentation and configuration of KC01, Simon's homelab.
 As someone that occasionally interviews Site Reliablity Engineers, I've always found myself to appreciate candidates with a nice homelab.
 This is my attempt to learn and document my homelab so I can have better conversations with Site Reliability/DevOps Engineers. 
-
-My work at Dendi uses AWS ECS for container orchestration, but that is not available to me locally so I will use Kubernetes to strengthen my understanding of container orchestration.
 
 ## 🖥️ Hardware
 

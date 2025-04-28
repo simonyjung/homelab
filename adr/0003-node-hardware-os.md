@@ -24,14 +24,14 @@ Use cheap, used mini PCs as cluster nodes, running Debian 13 as the operating sy
 
 ## Hardware Details
 
-| Component       | Specification                         | Notes             |
-|------------------|--------------------------------------|-------------------|
-| **Model**       | HP ProDesk 600 G4 Mini Desktop PCs    |                   |
-| **CPU**         | Intel Core i5-8500T                   | 6-core, 6-thread  |   
-| **RAM**         | 8GB DDR4 (Upgradeable to 64GB)        |                   |
+| Component       | Specification                         | Notes                        |
+|-----------------|---------------------------------------|------------------------------|
+| **Model**       | HP ProDesk 600 G4 Mini Desktop PCs    |                              |
+| **CPU**         | Intel Core i5-8500T                   | 6-core, 6-thread             |   
+| **RAM**         | 8GB DDR4                              | Upgradeable to 64GB          |
 | **Storage**     | 128GB NVMe SSD                        | Expandable with 2nd M.2 slot |
-| **Configuration** | 1 Master Node, 2 Worker Nodes       |                   |
-| **Cost**        | Under $300 total                      | Used via eBay     |
+| **Networking**  | 1 Gbps Ethernet                       |                              |
+| **Cost**        | Under $300 total                      | Used via eBay                |
 
 ## Potential Upgrade Paths
 

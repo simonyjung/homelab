@@ -38,4 +38,3 @@ Adopt FluxCD for managing Kubernetes deployments via GitOPs. FluxCD runs as a se
 
 - **Future Considerations**: 
   - As the cluster grows, revisit whether a hybrid approach (e.g., using ArgoCD for certain applications) could be beneficial.
-  - Periodically assess new FluxCD features such as image update automation and Helm controller improvements.

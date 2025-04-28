@@ -1,7 +1,7 @@
 # 🏡 KC01 - homelab
 
 ## 👋 Introduction
-Welcome to publicaly available documentation and configuration of KC01, Simon's homelab.
+Welcome to the publicly available documentation and configuration of KC01, Simon's kubernetes homelab cluster.
 As someone that occasionally interviews Site Reliablity Engineers, I've always found myself to appreciate candidates with a nice homelab.
 This is my attempt to learn and document my homelab so I can have better conversations with Site Reliability/DevOps Engineers. 
 

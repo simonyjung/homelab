@@ -1,4 +1,4 @@
-# ADR-002: Use K3s for Kubernetes Deployment
+# ADR-0002: Use K3s for Kubernetes Deployment
 
 **Status:** Accepted  
 **Date:** 2025-04-27

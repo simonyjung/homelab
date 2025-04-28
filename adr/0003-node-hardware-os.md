@@ -1,4 +1,4 @@
-# ADR-003: Select Mini PCs and Debian 13 for Node Hardware
+# ADR-0003: Select Mini PCs and Debian 13 for Node Hardware
 
 **Status:** Accepted  
 **Date:** 2025-04-27

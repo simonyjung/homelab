@@ -9,7 +9,7 @@ Hardware selection needed to balance cost, reliability, and energy efficiency fo
 
 ## Decision
 
-Use inexpensive, used mini PCs as cluster nodes, running Debian 13 as the operating system. The cluster will be configured with 1 Master Node and 3 Worker Nodes to provide resilience against the failure of any single node.
+Use inexpensive, used mini PCs as cluster nodes, running Debian 13 as the operating system. The cluster will be configured with 1 Master Node and 3 Worker Nodes to provide resilience against failure of any single node.
 
 <img src="./diagrams/0003_cluster_diagram.png" alt="KC01 Cluster Diagram" width="600"/>
 

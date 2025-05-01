@@ -5,7 +5,7 @@
 
 ## Context
 
-For the homelab Kubernetes deployment, a balance between ease of maintenance, debugging capability, and learning opportunities was necessary. Given the homelab environment, priorities included straightforward setup, ongoing system access via SSH, and hands-on exposure to Kubernetes management.
+For the homelab Kubernetes deployment, a balance between ease of maintenance, debugging capability, and learning opportunities was necessary. Priorities included straightforward setup, ongoing system access via SSH, and hands-on exposure to Kubernetes management.
 
 ## Decision
 

@@ -13,6 +13,8 @@ The two primary contenders evaluated were FluxCD and ArgoCD — both popular, ma
 
 Adopt FluxCD for managing Kubernetes deployments via GitOPs. FluxCD runs as a set of controllers inside the control plane and periodically polls a git repository for changes. When changes are detected, it reconciles the changes and applies the desired state to the cluster. This is called the reconciliation loop.
 
+The repository structure will be of Monorepo as described in [FluxCD: Repository Structure](https://fluxcd.io/flux/guides/repository-structure/).
+
 <img src="./diagrams/0004_flux_cd.png" alt="Reconciliation Loop" width="600"/>
 
 ## Rationale

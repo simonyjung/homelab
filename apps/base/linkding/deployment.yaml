@@ -12,17 +12,27 @@ spec:
       labels:
         app: linkding
     spec:
+    
       securityContext:
         fsGroup: 33
         runAsUser: 33
         runAsGroup: 33
+
       containers:
         - name: linkding
           image: sissbruecker/linkding:1.39.1-plus-alpine
           ports:
             - containerPort: 9090
+
           securityContext:
             allowPrivilegeEscalation: false
+
+          envFrom:
+            - secretRef:
+                name: linkding-container-env
+            # - configMapRef:
+            #     name: linkding-configmap
+
           resources:
             requests:
               memory: "256Mi"
@@ -30,9 +40,11 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "500m"
+
           volumeMounts:
             - name: linkding-data
               mountPath: /etc/linkding/data
+
       volumes:
         - name: linkding-data
           persistentVolumeClaim:

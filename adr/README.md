@@ -1,6 +1,6 @@
 # Homelab Architecture Decision Records (ADRs)
 
-Architecture Decision Records (ADRs) that mimic key architectural decisions made by an engineering team. They clearly outline the context, decision, and rationale, facilitating future reference and decision-making.
+Architecture Decision Records (ADRs) document the key architectural decisions made for this homelab. Each ADR clearly outlines the context, decision, and rationale, facilitating future reference and decision-making.
 
 ## Structure of an ADR
 
@@ -19,7 +19,7 @@ Brief and clear summary of the decision (e.g., "Use Kubernetes for Container Orc
 
 ### Date
 
-Date of decision.
+The date the decision was finalized.
 
 ### Context
 

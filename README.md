@@ -2,9 +2,9 @@
 
 ## 👋 Introduction
 
-Welcome to the publicly available documentation and configuration of KC01, Simon's kubernetes homelab cluster.
-As someone that occasionally interviews Site Reliablity Engineers, I've always found myself to appreciate candidates with a nice homelab.
-This is my attempt to learn and document my homelab so I can have better conversations with Site Reliability/DevOps Engineers. 
+Welcome to KC01, Simon's Kubernetes homelab cluster. This repository contains its public documentation and configuration.
+As someone who occasionally interviews Site Reliability Engineers, I appreciate candidates with well-documented homelabs.
+This project serves as both a learning exercise and documentation effort, aiming to facilitate better conversations with Site Reliability and DevOps Engineers.
 
 ## 🏃 GitOps
 
@@ -14,7 +14,7 @@ See [ADR-0004](/adr/0004-use-flux-cd-for-gitops.md)
 
 ## 🔐 Secrets
 
-This project uses SOPS (Secrets OPerationS) to securely encrypt secrets that are safe to commit to a public GitHub repository. Secrets are encrypted using age keys and stored within yaml files. The decryption process is handled automatically in CI/CD pipelines by Flux. See [ADR-0005](/adr/0005-use-sops-and-age-for-secrets-encryption.md) for example usage and cold start procedures. 
+This project uses SOPS (Secrets OPerationS) to securely manage secrets committed to this public GitHub repository. Secrets are encrypted using age keys and stored within YAML files. Decryption is handled automatically by Flux during deployment. See [ADR-0005](/adr/0005-use-sops-and-age-for-secrets-encryption.md) for example usage and cold start procedures.
 
 ## 🖥️ Hardware
 

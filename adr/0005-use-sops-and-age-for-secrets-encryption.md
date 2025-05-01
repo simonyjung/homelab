@@ -33,7 +33,7 @@ Use Mozilla SOPS with Age encryption to secure Kubernetes secrets. The Age key i
 
 ## Implementation Notes:
 
-How to generate an encrypted secret yaml:
+### How to generate an encrypted secret yaml
 ```
 # ssh into master node
 ssh node00
@@ -54,4 +54,24 @@ sops --age=$AGE_PUBLIC \
 cat test-secret.yaml
 
 # Move to repository, commit.
+```
+
+### Cold Start
+
+If cluster has to be restarted in a cold start scenario, it is neccesary to recreate the `sops-age` secret manually as it is not included in this repository. 
+
+The contents of the age.agekey file can be found in this [1Password Link](https://start.1password.com/open/i?a=TG2G6YLPWFCLZO3XBOCX5EM57A&v=h2b7pqgkqmgrybvdvjxnkmtm2y&i=sset5ijhy4hgjwkje2qmiouq2y&h=my.1password.com)
+
+```
+# ssh into the new node00
+ssh node00
+
+# copy contents of 1password entry
+nano age.agekey
+
+# Create sops-age secret with age.agekey
+cat age.agekey |
+kubectl create secret generic sops-age \
+--namespace=flux-system \
+--from-file=age.agekey=/dev/stdin
 ```

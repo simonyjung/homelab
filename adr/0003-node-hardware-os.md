@@ -53,8 +53,8 @@ Use inexpensive, used mini PCs as cluster nodes, running Debian 13 as the operat
 
 **Alternatives Considered:**
 1. **New Hardware**: More reliable but cost-prohibitive for the intended scale.
-2. **Other Distributions**: Faster-moving distributions (e.g., Ubuntu, Fedora) were considered, but `Debian`'s conservative approach better matched homelab stability goals.
-3. **3 Control Plane Configuration**: A 3 control plane, 4 worker node setup was considered but deemed overly complex for a homelab scenario and not commonly applicable in production scenarios (AWS EKS and Azure AKS provide managed control planes.)
+2. **Other Distributions**: Faster-moving distributions (e.g., Ubuntu, Fedora) were considered, but Debian's conservative approach better matched homelab stability goals.
+3. **3 Control Plane Configuration**: A 3 control plane, 4 worker node setup was considered but deemed overly complex for a homelab scenario and not commonly applicable in production scenarios (AWS EKS and Azure AKS provide managed control planes).
 
 ## Consequences
 - **Positive**:  

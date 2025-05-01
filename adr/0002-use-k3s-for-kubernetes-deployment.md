@@ -5,24 +5,40 @@
 
 ## Context
 
-For the homelab Kubernetes deployment, a balance between ease of maintenance, debugging capability, and learning opportunities was necessary. Priorities included straightforward setup, ongoing system access via SSH, and hands-on exposure to Kubernetes management.
+The goal for the homelab Kubernetes setup is to balance ease of management, robust debugging capabilities, and hands-on learning. Key requirements include a straightforward initial setup, the ability to access nodes via SSH for troubleshooting and exploration, and direct exposure to Kubernetes administration tasks.
+
+## Decision Drivers
+
+*   **Simplicity:** Need a distribution that minimizes setup and maintenance overhead for a homelab environment.
+*   **Accessibility:** Require SSH access to nodes for direct system interaction, debugging, and learning.
+*   **Learning Focus:** Prioritize gaining practical experience with Kubernetes and underlying Linux systems.
+*   **Efficiency:** Prefer solutions with useful defaults to reduce initial configuration effort.
 
 ## Decision
 
-Deploy Kubernetes clusters using K3s.
+We will use K3s as the Kubernetes distribution for the homelab cluster.
 
 ## Rationale
 
-- **Ease of Maintenance**: K3s offers a simplified, lightweight Kubernetes distribution that is easier to set up and maintain compared to kubeadm or Talos.
-- **SSH Access**: Maintaining standard Linux distributions for the nodes allows SSH access, enabling easier debugging, system inspection, and a broader learning experience.
-- **Learning Opportunity**: Working within the full Linux environment provides deeper system understanding beneficial for homelab growth.
+K3s was chosen because it best meets the decision drivers compared to the alternatives:
+
+*   **Simplified Management:** K3s is a lightweight distribution designed for ease of installation and operation, significantly reducing the maintenance burden compared to `kubeadm`. This aligns with the need for simplicity in a homelab.
+*   **Full System Access:** Unlike Talos, which uses a minimal, locked-down OS, K3s runs on standard Linux distributions. This preserves SSH access, crucial for direct node inspection, troubleshooting, and deeper learning about both Kubernetes and Linux internals.
+*   **Integrated Ingress:** K3s includes the Traefik Ingress Controller by default. Since Traefik is already used elsewhere in the homelab, this simplifies the stack and reduces initial setup time.
+*   **Balance:** K3s strikes a good balance between the operational simplicity desired for a homelab and the learning opportunities afforded by accessible underlying systems, unlike the more complex `kubeadm` or the restricted Talos environment.
 
 **Alternatives Considered:**
-- **Talos**: Offers excellent security and immutability, ideal for production environments. However, lack of traditional SSH access and more rigid configuration made it less suitable for a learning-focused homelab.
-- **Kubeadm**: Standard Kubernetes bootstrapping tool, widely used in certifications (e.g., CKA/CKAD). Rejected due to higher operational overhead and manual maintenance requirements, which could burden homelab management long-term.
+
+*   **Talos:** Provides superior security and immutability through a minimal, API-managed OS. However, its lack of traditional SSH access and more rigid configuration model conflict with the requirements for accessibility and hands-on learning in this homelab context.
+*   **Kubeadm:** The standard tool for bootstrapping Kubernetes clusters, offering maximum flexibility and alignment with certifications (e.g., CKA/CKAD). Rejected due to its higher operational complexity and manual maintenance demands, which are less suitable for a resource-constrained homelab focused on ease of use.
 
 ## Consequences
 
-- **Positive**: Faster cluster setup, easier recovery and troubleshooting, better alignment with homelab goals of flexibility and learning.
-- **Trade-off**: Less security hardening compared to Talos.
-- **Future Considerations**: As operational expertise grows, reevaluate if transitioning to a production-grade setup (e.g., Talos or full kubeadm) becomes desirable.
+*   **Positive:**
+    *   Faster cluster deployment and easier management.
+    *   Simplified troubleshooting and recovery due to familiar SSH access.
+    *   Better alignment with homelab goals of flexibility, learning, and practical experience.
+*   **Trade-offs:**
+    *   K3s running on a general-purpose OS offers less inherent security hardening compared to the immutable, minimal OS approach of Talos. This is an acceptable trade-off for the homelab's learning and accessibility goals.
+*   **Future Considerations:**
+    *   As operational experience increases, we may re-evaluate transitioning to a more production-oriented distribution like Talos or standard `kubeadm` if homelab priorities shift towards security or mimicking enterprise environments more closely.

@@ -18,20 +18,23 @@ This project uses SOPS (Secrets OPerationS) to securely encrypt secrets that are
 
 ## 🖥️ Hardware
 
-### Nodes
+This homelab utilizes cost-effective and energy-efficient mini PCs for its compute nodes, along with a dedicated NAS for persistent storage.
 
-The nodes are 4 mini pcs purchased off ebay. They are small, have low electricity usage, and are cheap used.
+### Nodes (4 Total)
 
-Dell Optiplex 3060 i5-8500T/24GB/512GB NVME
+The cluster consists of four mini PCs selected for their small form factor, low power consumption, and affordability on the used market. They provide the compute resources for the Kubernetes cluster.
 
-HP ProDesk 600 G4 Mini i5-8500T/8GB/128GB NVME
+| Make/Model             | CPU         | RAM   | Storage     | Role          |
+| ---------------------- | ----------- | ----- | ----------- | ------------- |
+| Dell Optiplex 3060 Mini| i5-8500T    | 24GB  | 512GB NVMe  | Control Plane |
+| HP ProDesk 600 G4 Mini | i5-8500T    | 8GB   | 128GB NVMe  | Worker Node   |
+| HP ProDesk 600 G4 Mini | i5-8500T    | 8GB   | 128GB NVME  | Worker Node   |
+| HP ProDesk 600 G4 Mini | i5-8500T    | 8GB   | 128GB NVME  | Worker Node   |
 
-HP ProDesk 600 G4 Mini i5-8500T/8GB/128GB NVME
+*Further details on node selection and OS can be found in [ADR-0003](/adr/0003-node-hardware-os.md).*
 
-HP ProDesk 600 G4 Mini i5-8500T/8GB/128GB NVME
+### Storage
 
-See [ADR-0003](/adr/0003-node-hardware-os.md)
+Persistent storage for applications requiring state is provided by a Network Attached Storage (NAS) device:
 
-## 💽 Storage
-
-Persistent storage is provided by a NAS, the Synology DS923+.
+*   **Model:** Synology DS923+

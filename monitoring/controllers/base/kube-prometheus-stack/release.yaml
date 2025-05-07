@@ -51,4 +51,4 @@ spec:
         tls:
           - secretName: grafana-tls-secret
             hosts:
-            - grafrana.kyjung.com
+            - grafana.kyjung.com

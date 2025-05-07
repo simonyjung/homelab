@@ -5,3 +5,5 @@ kubeconfig
 talosconfig
 .env
 notes
+*.crt
+*.key

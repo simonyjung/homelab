@@ -44,21 +44,11 @@ spec:
         ##
         hosts: 
           - grafana.kyjung.com
-        
 
-        ## Paths to use for ingress rules - one path should match the alertmanagerSpec.routePrefix
-        ##
-        paths: []
-        # - /
-
-        ## For Kubernetes >= 1.18 you should specify the pathType (determines how Ingress paths should be matched)
-        ## See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#better-path-matching-with-path-types
-        # pathType: ImplementationSpecific
-
-        ## TLS configuration for Alertmanager Ingress
+        ## TLS configuration for Grafana Ingress
         ## Secret must be manually created in the namespace
         ##
-        tls: []
-        # - secretName: alertmanager-general-tls
-        #   hosts:
-        #   - alertmanager.example.com
+        tls:
+          - secretName: grafana-tls-secret
+            hosts:
+            - grafrana.kyjung.com

@@ -24,12 +24,12 @@ This homelab utilizes cost-effective and energy-efficient mini PCs for its compu
 
 The cluster consists of four mini PCs selected for their small form factor, low power consumption, and affordability on the used market. They provide the compute resources for the Kubernetes cluster.
 
-| Make/Model             | CPU         | RAM   | Storage     | Role          |
-| ---------------------- | ----------- | ----- | ----------- | ------------- |
-| Dell Optiplex 3060 Mini| i5-8500T    | 24GB  | 512GB NVMe  | Control Plane |
-| HP ProDesk 600 G4 Mini | i5-8500T    | 8GB   | 128GB NVMe  | Worker Node   |
-| HP ProDesk 600 G4 Mini | i5-8500T    | 8GB   | 128GB NVME  | Worker Node   |
-| HP ProDesk 600 G4 Mini | i5-8500T    | 8GB   | 128GB NVME  | Worker Node   |
+| Make/Model             | CPU         | RAM   | Storage     | Role          | IP         |
+| ---------------------- | ----------- | ----- | ----------- | ------------- | ---------- |
+| HP ProDesk 600 G4 Mini | i5-8500T    | 8GB   | 128GB NVMe  | Control Plane | 10.0.10.10 |
+| HP ProDesk 600 G4 Mini | i5-8500T    | 8GB   | 128GB NVME  | Worker Node   | 10.0.10.11 |
+| HP ProDesk 600 G4 Mini | i5-8500T    | 8GB   | 128GB NVME  | Worker Node   | 10.0.10.12 |
+| Dell Optiplex 3060 Mini| i5-8500T    | 24GB  | 512GB NVMe  | Worker Node   | 10.0.10.13 |
 
 *Further details on node selection and OS can be found in [ADR-0003](/adr/0003-node-hardware-os.md).*
 

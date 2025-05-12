@@ -9,3 +9,5 @@ spec:
       storage: 10Gi
   accessModes:
     - ReadWriteMany
+  securityContext:
+    fsGroup: 33

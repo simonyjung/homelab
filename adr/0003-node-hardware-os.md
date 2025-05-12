@@ -11,7 +11,7 @@ Hardware selection needed to balance cost, reliability, and energy efficiency fo
 
 Use inexpensive, used mini PCs as cluster nodes, running Debian 13 as the operating system. The cluster will be configured with 1 Master Node and 3 Worker Nodes to provide resilience against failure of any single node.
 
-<img src="./diagrams/0003_cluster_diagram.png" alt="KC01 Cluster Diagram" width="600"/>
+<img src="./diagrams/0003_cluster_diagram.png" alt="KC02 Cluster Diagram" width="600"/>
 
 ## Rationale
 
@@ -20,7 +20,7 @@ Use inexpensive, used mini PCs as cluster nodes, running Debian 13 as the operat
 - **Power Consumption**: Mini PCs are more energy-efficient than traditional server hardware, reducing operating costs.
 - **Failure Tolerance**: `Kubernetes` provides resilience against individual node failures, making the risk of using used hardware more acceptable.
 - **Operating System Stability**: `Debian 13` was selected for its long and stable release cycles, critical for minimizing disruptive upgrades.
-- **Timing**: `Debian 13` entered soft freeze as of April 15, 2025, and is expected to be fully released before the completion of the KC01 cluster project.
+- **Timing**: `Debian 13` entered soft freeze as of April 15, 2025, and is expected to be fully released before the completion of the KC02 cluster project.
 
 ## Master Node Hardware Details
 

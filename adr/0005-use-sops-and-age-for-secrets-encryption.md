@@ -38,3 +38,6 @@ The master Age private key, required for decryption, will be securely stored (e.
     *   **Manual Encryption Step:** Creating or updating secrets involves a manual step using the `sops` CLI before committing changes to Git.
     *   **Key Management Responsibility:** Secure management (storage, backup, access control) of the Age private key is critical. Loss or compromise of the key would prevent decryption of secrets.
     *   **Potential for Commit Noise:** Binary diffs of encrypted files can make tracking changes to secret *values* less transparent in Git history compared to plaintext.
+ 
+## Resources
+[KC02 Secrets Management](https://www.kookyhaus.com/homelab/Access-and-Authentication#secrets-management)

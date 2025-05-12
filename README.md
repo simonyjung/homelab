@@ -38,3 +38,6 @@ The cluster consists of four mini PCs selected for their small form factor, low 
 Persistent storage for applications requiring state is provided by a Network Attached Storage (NAS) device:
 
 *   **Model:** Synology DS923+
+*   Kubernetes persistent storage is provisioned using the [Synology CSI driver](https://www.talos.dev/v1.10/kubernetes-guides/configuration/synology-csi/) to automatically manage iSCSI volumes on the NAS.
+
+See [ADR-0007](/adr/0007-use-synology-csi-for-persistent-storage.md).

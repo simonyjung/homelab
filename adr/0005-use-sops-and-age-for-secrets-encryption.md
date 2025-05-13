@@ -40,4 +40,4 @@ The master Age private key, required for decryption, will be securely stored (e.
     *   **Potential for Commit Noise:** Binary diffs of encrypted files can make tracking changes to secret *values* less transparent in Git history compared to plaintext.
  
 ## Resources
-[KC02 Secrets Management](https://www.kookyhaus.com/homelab/Access-and-Authentication#secrets-management)
+[KC02 Secrets Management](https://www.kookyhaus.com/homelab/Documentation/Access-and-Authentication/Secrets-Management)

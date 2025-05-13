@@ -6,6 +6,8 @@ Welcome to KC02, Simon's Kubernetes homelab cluster. This repository contains it
 As someone who occasionally interviews Site Reliability Engineers, I appreciate candidates with well-documented homelabs.
 This project serves as both a learning exercise and documentation effort, aiming to facilitate better conversations with Site Reliability and DevOps Engineers.
 
+[Documentation](https://www.kookyhaus.com/homelab/KC02-Kubernetes-Homelab)
+
 ## 🏃 GitOps
 
 This project uses FluxCD to implement GitOps—managing Kubernetes infrastructure and application configuration through this git repository. Flux continuously monitors this repository and applies changes automatically to the cluster, ensuring the declared state in Git matches the live state in Kubernetes.

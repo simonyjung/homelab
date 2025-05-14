@@ -9,6 +9,7 @@ spec:
     spec:
       chart: kube-prometheus-stack
       version: "71.1.*"
+      
       sourceRef:
         kind: HelmRepository
         name: kube-prometheus-stack
@@ -26,29 +27,29 @@ spec:
           kind: PrometheusRule
   values:
     grafana:
-      adminPassword: admin
-      ingress:
-        enabled: true
+      adminPassword: kyjung
+      # ingress:
+      #   enabled: true
 
-        # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
-        # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-        ingressClassName: traefik
+      #   # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
+      #   # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
+      #   ingressClassName: cloudflared
 
-        ## Override ingress to a different defined port on the service
-        # servicePort: 8081
-        ## Override ingress to a different service then the default, this is useful if you need to
-        ## point to a specific instance of the alertmanager (eg kube-prometheus-stack-alertmanager-0)
-        # serviceName: kube-prometheus-stack-alertmanager-0
+      #   ## Override ingress to a different defined port on the service
+      #   # servicePort: 8081
+      #   ## Override ingress to a different service then the default, this is useful if you need to
+      #   ## point to a specific instance of the alertmanager (eg kube-prometheus-stack-alertmanager-0)
+      #   # serviceName: kube-prometheus-stack-alertmanager-0
 
-        ## Hosts must be provided if Ingress is enabled.
-        ##
-        hosts: 
-          - grafana.kyjung.com
+      #   ## Hosts must be provided if Ingress is enabled.
+      #   ##
+      #   hosts: 
+      #     - grafana.kyjung.com
 
-        ## TLS configuration for Grafana Ingress
-        ## Secret must be manually created in the namespace
-        ##
-        tls:
-          - secretName: grafana-tls-secret
-            hosts:
-            - grafana.kyjung.com
+      #   ## TLS configuration for Grafana Ingress
+      #   ## Secret must be manually created in the namespace
+      #   ##
+      #   tls:
+      #     - secretName: grafana-tls-secret
+      #       hosts:
+      #       - grafana.kyjung.com

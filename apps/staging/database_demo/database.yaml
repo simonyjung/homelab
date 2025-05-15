@@ -9,7 +9,7 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: demo-cluster
-  namespace: demo-cluster
+  namespace: database
 spec:
   instances: 3
   storage:

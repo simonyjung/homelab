@@ -3,10 +3,10 @@ kind: PersistentVolumeClaim
 metadata:
   name: linkding-data-pvc
 spec:
-  storageClassName: synology-iscsi-retain
+  storageClassName: synology-iscsi
   resources:
     requests:
-      storage: 500Mi
+      storage: 1Gi
   accessModes:
     - ReadWriteOnce
   securityContext:

@@ -6,7 +6,7 @@ spec:
   storageClassName: synology-iscsi-retain
   resources:
     requests:
-      storage: 10Gi
+      storage: 500Mi
   accessModes:
     - ReadWriteOnce
   securityContext:

@@ -30,8 +30,8 @@ spec:
           envFrom:
             - secretRef:
                 name: linkding-container-env
-            # - configMapRef:
-            #     name: linkding-configmap
+            - configMapRef:
+                name: linkding-configmap
 
           resources:
             requests:

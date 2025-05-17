@@ -8,7 +8,7 @@ metadata:
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: demo-cluster
+  name: demo-cluster2
   namespace: database
 spec:
   instances: 3

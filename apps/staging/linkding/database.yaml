@@ -1,0 +1,10 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: linkding-db-staging
+spec:
+  instances: 3
+  storage:
+    size: 256Mi
+  monitoring:
+    enablePodMonitor: true

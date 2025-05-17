@@ -41,12 +41,12 @@ spec:
               memory: "512Mi"
               cpu: "500m"
 
-          volumeMounts:
-            - name: linkding-data
-              mountPath: /etc/linkding/data
+      #     volumeMounts:
+      #       - name: linkding-data
+      #         mountPath: /etc/linkding/data
 
-      volumes:
-        - name: linkding-data
-          persistentVolumeClaim:
-            claimName: linkding-data-pvc
+      # volumes:
+      #   - name: linkding-data
+      #     persistentVolumeClaim:
+      #       claimName: linkding-data-pvc
 

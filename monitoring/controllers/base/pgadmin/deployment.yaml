@@ -14,9 +14,16 @@ spec:
     spec:
       containers:
         - name: pgadmin
-          image: dpage/pgadmin4
+          image: dpage/pgadmin4:9.3.0
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
           env:
             - name: PGADMIN_DEFAULT_EMAIL
               value: admin@example.com

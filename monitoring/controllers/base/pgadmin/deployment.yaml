@@ -30,11 +30,11 @@ spec:
           envFrom:
             - secretRef:
                 name: pgadmin-container-env
-      #     volumeMounts:
-      #       - name: pgadmin-data
-      #         mountPath: /var/lib/pgadmin
+          volumeMounts:
+            - name: pgadmin-data
+              mountPath: /var/lib/pgadmin
 
-      # volumes:
-      #   - name: pgadmin-data
-      #     persistentVolumeClaim:
-      #       claimName: pgadmin-data-pvc
+      volumes:
+        - name: pgadmin-data
+          persistentVolumeClaim:
+            claimName: pgadmin-data-pvc

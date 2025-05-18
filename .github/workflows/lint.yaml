@@ -1,10 +1,11 @@
 ---
 # This workflow will lint all YAML files in the repository using yamllint.
+# Configuration is in .yamllint.
 # https://github.com/marketplace/actions/yaml-lint
 name: Yaml Lint
 on: [push]  # yamllint disable-line rule:truthy
 jobs:
-  lintAllTheThings:
+  yamllint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

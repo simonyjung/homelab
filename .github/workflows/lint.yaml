@@ -1,16 +1,3 @@
-# ---
-# # This workflow will lint all YAML files in the repository using yamllint.
-# # https://github.com/marketplace/actions/yaml-lint
-# name: Yaml Lint
-# on: [push]  # yamllint disable-line rule:truthy
-# jobs:
-#   lintAllTheThings:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#       - name: yaml-lint
-#         uses: ibiqlik/action-yamllint@v3
----
 name: Lint yaml files
 
 on: [push]
@@ -27,3 +14,17 @@ jobs:
             options: --summary
             user: ${{secrets.my_user}}
             token: ${{secrets.my_user_password}}
+
+
+# ---
+# # This workflow will lint all YAML files in the repository using yamllint.
+# # https://github.com/marketplace/actions/yaml-lint
+# name: Yaml Lint
+# on: [push]  # yamllint disable-line rule:truthy
+# jobs:
+#   lintAllTheThings:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: yaml-lint
+#         uses: ibiqlik/action-yamllint@v3

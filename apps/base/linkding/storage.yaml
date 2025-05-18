@@ -6,8 +6,8 @@ spec:
   storageClassName: synology-iscsi
   resources:
     requests:
-      storage: 1Gi
+      storage: 512Mi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   securityContext:
     fsGroup: 33

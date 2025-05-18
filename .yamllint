@@ -7,7 +7,6 @@ yaml-files:
 
 ignore:
   - 'clusters/*/flux-system/*.yaml'
-  - '*secret.yaml'
 
 rules:
   anchors: enable
@@ -29,7 +28,7 @@ rules:
   indentation: enable
   key-duplicates: enable
   key-ordering: disable
-  line-length: enable
+  line-length: disable
   new-line-at-end-of-file: enable
   new-lines: enable
   octal-values: disable

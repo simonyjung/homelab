@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -13,11 +14,11 @@ spec:
         app: cloudflared
     spec:
       containers:
-      - name: cloudflared
+        - name: cloudflared
         image: cloudflare/cloudflared:latest
         args:
-        - tunnel
- 
+          - tunnel
+
         # Points cloudflared to the config file, which configures what
         # cloudflared will actually do. This file is created by a ConfigMap
         # below.
@@ -34,7 +35,7 @@ spec:
           initialDelaySeconds: 10
           periodSeconds: 10
         volumeMounts:
-        - name: config
+          - name: config
           mountPath: /etc/cloudflared/config
           readOnly: true
         # Each tunnel has an associated "credentials file" which authorizes machines
@@ -44,16 +45,16 @@ spec:
           mountPath: /etc/cloudflared/creds
           readOnly: true
       volumes:
-      - name: creds
+        - name: creds
         secret:
           secretName: grafana-tunnel-credentials
- 
+
       # Create a config.yaml file from the ConfigMap below.
       - name: config
         configMap:
           name: cloudflared
           items:
-          - key: config.yaml
+            - key: config.yaml
             path: config.yaml
 ---
 # This ConfigMap is just a way to define the cloudflared config.yaml file in k8s.
@@ -67,18 +68,18 @@ metadata:
 data:
   config.yaml: |
     # Name of the tunnel you want to run
-    
+
     tunnel: grafana
- 
+
     credentials-file: /etc/cloudflared/creds/credentials.json
- 
+
     # Serves the metrics server under /metrics and the readiness server under /ready
     metrics: 0.0.0.0:2000
     no-autoupdate: true
- 
+
     ingress:
     - hostname: grafana.kyjung.com
       service: http://kube-prometheus-stack-grafana
- 
+
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
     - service: http_status:404

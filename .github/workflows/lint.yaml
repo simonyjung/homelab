@@ -8,7 +8,7 @@ jobs:
       - name: Checkout my app
         uses: actions/checkout@v3
       - name: Lint yaml files
-        uses: opt-nc/yamlfixer-action
+        uses: opt-nc/yamlfixer-action@v3
         with:
             options: --summary
             user: ${{secrets.my_user}}

@@ -8,6 +8,6 @@ spec:
     requests:
       storage: 1Gi
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   securityContext:
     fsGroup: 5050

@@ -1,7 +1,5 @@
 name: Lint yaml files
-
 on: [push]
-
 jobs:
   lint:
     runs-on: ubuntu-latest

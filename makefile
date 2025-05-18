@@ -1,2 +1,5 @@
 lint:
-	"/Library/Frameworks/Python.framework/Versions/3.12/bin/yamllint -r -1 ."
+	yamllint .
+
+lintfix:
+	yamlfixer -r -1 .

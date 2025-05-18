@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
         - name: cloudflared
-        image: cloudflare/cloudflared:latest
-        args:
-          - tunnel
+          image: cloudflare/cloudflared:latest
+          args:
+            - tunnel
 
         # Points cloudflared to the config file, which configures what
         # cloudflared will actually do. This file is created by a ConfigMap
@@ -25,8 +25,8 @@ spec:
         - --config
         - /etc/cloudflared/config/config.yaml
         - run
-        livenessProbe:
-          httpGet:
+          livenessProbe:
+            httpGet:
             # Cloudflared has a /ready endpoint which returns 200 if and only if
             # it has an active connection to the edge.
             path: /ready
@@ -34,10 +34,10 @@ spec:
           failureThreshold: 1
           initialDelaySeconds: 10
           periodSeconds: 10
-        volumeMounts:
-          - name: config
-          mountPath: /etc/cloudflared/config
-          readOnly: true
+          volumeMounts:
+            - name: config
+            mountPath: /etc/cloudflared/config
+            readOnly: true
         # Each tunnel has an associated "credentials file" which authorizes machines
         # to run the tunnel. cloudflared will read this file from its local filesystem,
         # and it'll be stored in a k8s secret.
@@ -46,8 +46,8 @@ spec:
           readOnly: true
       volumes:
         - name: creds
-        secret:
-          secretName: grafana-tunnel-credentials
+          secret:
+            secretName: grafana-tunnel-credentials
 
       # Create a config.yaml file from the ConfigMap below.
       - name: config
@@ -55,7 +55,7 @@ spec:
           name: cloudflared
           items:
             - key: config.yaml
-            path: config.yaml
+              path: config.yaml
 ---
 # This ConfigMap is just a way to define the cloudflared config.yaml file in k8s.
 # It's useful to define it in k8s, rather than as a stand-alone .yaml file, because

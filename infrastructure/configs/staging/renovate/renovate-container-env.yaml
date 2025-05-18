@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 data:
     RENOVATE_TOKEN: ENC[AES256_GCM,data:ngZTi6JgZvNgkdZ6bcAnZu+Img39ESUWMtuB4peB2RxNA2m9sbX36j3b98+SRH3YfH8l0C6ryOg=,iv:jgnKaTCwhEwvq5rvm7buFiS/oSUkyJR8FE+0YInmoN4=,tag:yL+ZXE69CVarl9qci2ZAxw==,type:str]

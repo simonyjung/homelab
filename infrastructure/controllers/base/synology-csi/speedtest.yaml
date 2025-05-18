@@ -34,7 +34,7 @@ spec:
           command: ["dd", "if=/mnt/pv/test.img", "of=/dev/null", "bs=8k"]
           volumeMounts:
             - mountPath: "/mnt/pv"
-            name: test-volume
+              name: test-volume
       volumes:
         - name: test-volume
           persistentVolumeClaim:
@@ -62,11 +62,11 @@ spec:
       containers:
         - name: write
           image: ubuntu:noble
-        # yamllint disable-line rule:line-length
+          # yamllint disable-line rule:line-length
           command: ["dd", "if=/dev/zero", "of=/mnt/pv/test.img", "bs=1G", "count=1", "oflag=dsync"]
           volumeMounts:
             - mountPath: "/mnt/pv"
-            name: test-volume
+              name: test-volume
       volumes:
         - name: test-volume
           persistentVolumeClaim:

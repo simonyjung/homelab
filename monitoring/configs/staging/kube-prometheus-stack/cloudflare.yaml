@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: cloudflared
-  replicas: 2 # You could also consider elastic scaling for this deployment
+  replicas: 2  # You could also consider elastic scaling for this deployment
   template:
     metadata:
       labels:
@@ -25,7 +25,7 @@ spec:
         - --config
         - /etc/cloudflared/config/config.yaml
         - run
-          livenessProbe:
+          livenessProbe:  
             httpGet:
             # Cloudflared has a /ready endpoint which returns 200 if and only if
             # it has an active connection to the edge.

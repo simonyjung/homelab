@@ -1,21 +1,4 @@
 ---
-name: Lint yaml files
-on: [push]
-jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout my app
-        uses: actions/checkout@v3
-      - name: Lint yaml files
-        uses: opt-nc/yamlfixer-action@v1.3.2
-        with:
-            options: --summary
-            user: ${{secrets.my_user}}
-            token: ${{secrets.my_user_password}}
-
-
----
 # This workflow will lint all YAML files in the repository using yamllint.
 # https://github.com/marketplace/actions/yaml-lint
 name: Yaml Lint

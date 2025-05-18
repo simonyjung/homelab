@@ -1,12 +1,13 @@
+---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: test-claim
   namespace: synology-csi
 spec:
-#  storageClassName: syno-storage
+  #  storageClassName: syno-storage
   accessModes:
-  - ReadWriteMany
+    - ReadWriteMany
   resources:
     requests:
       storage: 5G
@@ -28,18 +29,18 @@ spec:
         allowPrivilegeEscalation: false
         runAsNonRoot: true
       containers:
-      - name: read
+        - name: read
         image: ubuntu:noble
-        command: ["dd","if=/mnt/pv/test.img","of=/dev/null","bs=8k"]
+        command: ["dd", "if=/mnt/pv/test.img", "of=/dev/null", "bs=8k"]
         volumeMounts:
-        - mountPath: "/mnt/pv"
+          - mountPath: "/mnt/pv"
           name: test-volume
       volumes:
-      - name: test-volume
+        - name: test-volume
         persistentVolumeClaim:
           claimName: test-claim
       restartPolicy: Never
-      
+
 
 ---
 apiVersion: batch/v1
@@ -59,14 +60,15 @@ spec:
         allowPrivilegeEscalation: false
         runAsNonRoot: true
       containers:
-      - name: write
+        - name: write
         image: ubuntu:noble
-        command: ["dd","if=/dev/zero","of=/mnt/pv/test.img","bs=1G","count=1","oflag=dsync"]
+        # yamllint disable-line rule:line-length
+        command: ["dd", "if=/dev/zero", "of=/mnt/pv/test.img", "bs=1G", "count=1", "oflag=dsync"]
         volumeMounts:
-        - mountPath: "/mnt/pv"
+          - mountPath: "/mnt/pv"
           name: test-volume
       volumes:
-      - name: test-volume
+        - name: test-volume
         persistentVolumeClaim:
           claimName: test-claim
       restartPolicy: Never

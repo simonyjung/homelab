@@ -21,4 +21,11 @@ spec:
                     name: renovate-container-env
                 - configMapRef:
                     name: renovate-configmap
+              securityContext:
+                allowPrivilegeEscalation: false
+                runAsNonRoot: true
+                capabilities:
+                  drop: ["ALL"]
+                seccompProfile:
+                  type: RuntimeDefault
           restartPolicy: Never

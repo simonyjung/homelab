@@ -21,6 +21,14 @@ spec:
           ports:
             - containerPort: 8000
 
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop: ["ALL"]
+            seccompProfile:
+              type: RuntimeDefault
+
           resources:
             requests:
               memory: "256Mi"

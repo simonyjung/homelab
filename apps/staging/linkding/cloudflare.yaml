@@ -33,6 +33,14 @@ spec:
             - containerPort: 2000
               name: http-metrics
 
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop: ["ALL"]
+            seccompProfile:
+              type: RuntimeDefault
+
           volumeMounts:
             - name: config
               mountPath: /etc/cloudflared/config

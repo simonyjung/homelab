@@ -33,7 +33,7 @@ spec:
             failureThreshold: 1
             initialDelaySeconds: 10
             periodSeconds: 10
-            
+
           volumeMounts:
             - name: config
             mountPath: /etc/cloudflared/config
@@ -78,8 +78,6 @@ data:
     no-autoupdate: true
 
     ingress:
-    - hostname: grafana.kyjung.com
-      service: http://kube-prometheus-stack-grafana
-
-    # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
-    - service: http_status:404
+      - hostname: grafana.kyjung.com
+        service: http://kube-prometheus-stack-grafana
+      - service: http_status:404

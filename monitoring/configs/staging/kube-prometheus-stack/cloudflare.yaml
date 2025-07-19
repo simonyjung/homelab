@@ -15,10 +15,9 @@ spec:
     spec:
       containers:
         - name: cloudflared
-          image: cloudflare/cloudflared:latest
+          image: cloudflare/cloudflared:2025.2.1
           args:
             - tunnel
-
             # Points cloudflared to the config file, which configures what
             # cloudflared will actually do. This file is created by a ConfigMap
             # below.
@@ -34,6 +33,7 @@ spec:
             failureThreshold: 1
             initialDelaySeconds: 10
             periodSeconds: 10
+            
           volumeMounts:
             - name: config
             mountPath: /etc/cloudflared/config

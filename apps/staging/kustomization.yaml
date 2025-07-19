@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - linkding
   - max
-  - database_demo
+  # - database_demo

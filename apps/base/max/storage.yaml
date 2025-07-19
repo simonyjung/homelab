@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: max-data-pvc
+spec:
+  storageClassName: synology-iscsi
+  resources:
+    requests:
+      storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  securityContext:
+    fsGroup: 33

@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: max
+spec:
+  # strategy:
+  #   type: Recreate
+  replicas: 1
+  selector:
+    matchLabels:
+      app: max
+  template:
+    metadata:
+      labels:
+        app: max
+    spec:
+      containers:
+        - name: max
+          image: modular/max-nvidia-full:latest
+          ports:
+            - containerPort: 8000
+
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "12Gi"
+
+          volumeMounts:
+            - name: max-data
+              mountPath: /root/.cache/huggingface
+
+      volumes:
+        - name: max-data
+          persistentVolumeClaim:
+            claimName: max-data-pvc

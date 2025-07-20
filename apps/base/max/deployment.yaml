@@ -18,7 +18,7 @@ spec:
       containers:
         - name: max
           image: modular/max-nvidia-full:latest
-          args: ["--model-path", "modularai/Llama-3.2-1B-Instruct-Extended-Vocab"]
+          args: ["--model-path", "modularai/llama-3.1-1L"]
           ports:
             - containerPort: 8000
 

@@ -18,6 +18,9 @@ spec:
       containers:
         - name: max
           image: modular/max-nvidia-full:latest
+          env:
+            - name: MODEL_PATH
+              value: "modularai/Llama-3.1-8B-Instruct-GGUF"
           ports:
             - containerPort: 8000
 
